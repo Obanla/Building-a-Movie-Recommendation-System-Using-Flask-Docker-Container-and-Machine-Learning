@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Recommendation System</title>
+</head>
+<body>
+    <h1>Movie Recommendation System</h1>
+    <form method="post">
+        <label for="movie_title">Select a movie:</label>
+        <select name="movie_title" id="movie_title">
+            {% for title in titles %}
+            <option value="{{ title }}" {% if title == selected_movie %}selected{% endif %}>{{ title }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Get Recommendations</button>
+    </form>
+    {% if recommendation %}
+    <h2>Recommendations:</h2>
+    <ul>
+        {% for rec in recommendation %}
+        <li>{{ rec }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</body>
+</html>
