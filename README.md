@@ -28,7 +28,27 @@ Flask—a widely used Web Server Gateway Interface (WSGI) framework—was levera
 After confirming that the Python app works locally through thorough testing, Docker was utilized to enhance scalability, portability, and ease of distribution. This approach ensures robust deployment and streamlined maintenance of the Python Flask application. A Dockerfile was created to instruct Docker on how to build the Docker image. Subsequently, the Docker image was built, and the container was run and tested successfully.
 
 ## Results
-T-SNE and 
+### Simple Average rating Vs. Weighted Average Rating
+The plot demonstrates that average rating alone is not ideal for global recommendations, as many movies with very few votes still appear in the top 20, making the results unreliable. Additionally, the chart highlights the typical long tail distribution in ratings systems: a small number of movies receive most of the votes, while the majority receive very few.
+![image](https://github.com/user-attachments/assets/c676f237-0fbe-4750-b2e6-564d6e9a813e)
+
+![image](https://github.com/user-attachments/assets/f61f1199-b6f5-44a0-9f51-09a95823186a)
+
+### TFIDF vs Count Vectorizer
+
+![image](https://github.com/user-attachments/assets/f986ea22-e941-4e16-b35b-cdd24b352e21)
+![image](https://github.com/user-attachments/assets/efec95d7-6077-481a-b81c-c1387db45606)
+Comparing TF-IDF and Count Vectorizer shows that TF-IDF emphasizes unique words, resulting in more meaningful and diverse clusters, as seen in the scattered t-SNE plot. In contrast, Count Vectorizer is sensitive to common words, grouping documents with similar word counts together, which produces a more structured and less varied t-SNE pattern. The elbow plot for TF-IDF suggests an optimal cluster number at k=4, while Count Vectorizer shows a steep drop with an optimal k=2, reflecting its tendency to form fewer, broader clusters.
+
+
+![image](https://github.com/user-attachments/assets/24f70bf0-69a2-4426-9dfd-7f7f82d41543)
+![image](https://github.com/user-attachments/assets/ad1bf1b2-3c19-4e3f-acf6-6a52a4ca77a5)
+
+
+![image](https://github.com/user-attachments/assets/21ed9a15-049b-4204-b8ff-41d36f4cf65c)
+![image](https://github.com/user-attachments/assets/d6b7790b-fd8d-4754-91f1-27adde4f6c4f)
+
 
 
 ## Discussion and Future Work
+TF-IDF was selected for its effectiveness in recommending movies that are semantically relevant, as it highlights distinctive terms and identifies the closest matches. In the future, we plan to explore deploying the Python Flask application on AWS cloud.
